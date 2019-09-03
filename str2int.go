@@ -39,7 +39,7 @@ func myAtoi(str string) int {
 			break
 		}
 		num = num*10 + int(s-'0')
-		// 2147483648 = 2 ^ 31 = 31 << 2
+		// 2147483648 = 2 ^ 31 = 2 <<31 
 		if num > 2147483648 {
 			num = 2147483648
 			break
