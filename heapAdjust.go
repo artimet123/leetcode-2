@@ -15,10 +15,12 @@ func sort(arr []int){
 		length = len(arr)
 	)
 
+	// 第一步 构造堆 时间复杂度为o(n)
 	for i = length/2 - 1; i >= 0; i--{
 		adjustHeap(arr, i, length)
 	}
 
+	// 第二步 顶端数据和最右数据交换，并重新构造堆(要注意：不要包含最后的一个数据，length - 1说明了一切) 时间复杂度为o(nlogN)
 	for j = length - 1; j > 0; j-- {
 		swap(arr, 0, j)
 		adjustHeap(arr, 0, j)
