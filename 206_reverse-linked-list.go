@@ -36,7 +36,7 @@ func reverseList(head *ListNode) *ListNode {
 		tmp := next.Next
 		// 2: 换next和head的地址
 		next.Next = node
-		node = next // 这步非常关键，会让node 始终指向开头的元素
+		node = next // 这步非常关键，会让node 始终指向开头的元素,这个是让node始终跟着next的指针的在走动
 
 		// 3: 移动next
 		next = tmp

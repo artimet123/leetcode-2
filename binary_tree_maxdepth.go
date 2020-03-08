@@ -8,7 +8,9 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// 最长路径 = 左子树 + 右子树 +1（根）
 func main() {
+	var l ,r int
 	t1 := &TreeNode{Val: 1}
 	t2 := &TreeNode{Val: 2}
 	t3 := &TreeNode{Val: 3}
@@ -23,10 +25,18 @@ func main() {
 	t3.Left = t5
 
 	t5.Right = t6
-	ret := maxDepth(t1)
+
+	if t1.Left != nil {
+		l = maxDepth(t1.Left)
+	}
+	if t1.Right != nil {
+		r = maxDepth(t1.Right)
+	}
+	ret := l + r +1
 	fmt.Println("ret=", ret)
 }
 
+// 找到
 func maxDepth(root *TreeNode) int {
 	if root == nil {
 		return 0

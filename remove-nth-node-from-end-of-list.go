@@ -24,6 +24,8 @@ func main(){
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	n1, n2 := head, head
+
+	// 先让n2往后走n步。因为要找倒数的第n个删除
 	for i := 0; i < n; i++ {
 		n2 = n2.Next
 	}
