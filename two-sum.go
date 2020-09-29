@@ -6,8 +6,8 @@ import "fmt"
 // 时间复杂度o(n) = n
 func main() {
 	var (
-		target int = 9
-		nums       = []int{2, 7, 22, 13, 7}
+		target int = 4
+		nums       = []int{2, 2, 22, 13, 7}
 		b      []int
 	)
 	b = twoSum(nums, target)
@@ -24,6 +24,8 @@ func twoSum(nums []int, target int) []int {
 		*/
 		is[n] = i
 	}
+
+	fmt.Println("is", is)
 
 	for i, n := range nums {
 		if j, ok := is[target-n]; ok && i != j {
