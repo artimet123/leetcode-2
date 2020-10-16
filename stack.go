@@ -40,8 +40,8 @@ func(s *stack)Pop()(string, bool){
 	}
 
 	item := s.Array[s.Top]
+	s.Array = s.Array[:s.Top]
 	s.Top--
-	s.Array[s.Top] = item
 	return item, true
 }
 
@@ -49,6 +49,9 @@ func main(){
 	stack1 := NewStack(10)
 	stack1.Push("mao")
 	stack1.Push("ming")
+	stack1.Push("yongming")
+
+	_,_ = stack1.Pop()
 
 	fmt.Println(stack1.Array)
 
