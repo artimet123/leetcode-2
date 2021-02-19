@@ -13,7 +13,7 @@ import (
 　　也就是说到达台阶i的方法数=达台阶i-1的方法数+达台阶i-2的方法数
 */
 func main() {
-	var n = 6
+	var n = 10
 	c := climbStairs(n)
 	fmt.Println("c=", c)
 
